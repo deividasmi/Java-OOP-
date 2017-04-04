@@ -31,7 +31,9 @@
               <Component id="StartDate" min="-2" pref="130" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="EndDate" min="-2" pref="130" max="-2" attributes="0"/>
-              <EmptySpace pref="448" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
+              <Component id="UpdateButton" min="-2" pref="100" max="-2" attributes="0"/>
+              <EmptySpace pref="310" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -40,8 +42,9 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace pref="449" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="StartDate" pref="30" max="32767" attributes="0"/>
-                  <Component id="EndDate" max="32767" attributes="0"/>
+                  <Component id="StartDate" max="32767" attributes="0"/>
+                  <Component id="EndDate" alignment="0" max="32767" attributes="0"/>
+                  <Component id="UpdateButton" alignment="0" pref="30" max="32767" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
           </Group>
@@ -64,6 +67,14 @@
       <AccessibilityProperties>
         <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Enter End Date in Format MM.DD.HH"/>
       </AccessibilityProperties>
+    </Component>
+    <Component class="javax.swing.JButton" name="UpdateButton">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Update"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="UpdateButtonActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
