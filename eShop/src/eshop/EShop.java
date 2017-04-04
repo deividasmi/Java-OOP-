@@ -15,7 +15,9 @@ public class EShop {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        //Creating GUI class and enabling form
+        GUI graphicalInterface = new GUI();
+        graphicalInterface.setVisible(true);
     }
     
 }
