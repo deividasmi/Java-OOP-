@@ -1,26 +1,37 @@
-id   good    brand  colour model    size  amount shopsID month day hour
-1111 dress   Zara   red    casual   M     5      1       1 1 15 
-1112 shirt   Zara   blue   business M     2      2       1 1 15 
-1113 pants   Zara   green  casual   XL    1      3       1 1 15 
-1114 pants   Adidas red    sports   L     2      4       1 1 15 
-1115 shirt   Adidas yellow sports   M     4      5       1 1 15 
-1116 shirt   Zara   white  casual   M     1      1       1 1 15 
-1117 cap     Zara   black  casual   M     1      1       1 1 16 
-1118 shoes   Zara   black  casual   L     2      1       1 1 16 
-1119 dress   Adidas black  casual   S     3      1       1 1 16 
-1110 dress   Zara   white  business M     1      2       1 1 16 
-1121 dress   Zara   black  business M     1      3       1 1 16 
-1123 shoes   Nike   black  sports   M     2      4       1 1 16 
-1124 shoes   Zara   red    casual   M     1      5       2 1 15 
-1125 cap     Zara   red    casual   S     1      1       2 1 15 
-1126 shorts  Zara   red    casual   L     2      1       2 1 15 
-1127 sweater Nike   white  sports   M     2      2       2 1 15 
-1128 t-shirt Zara   white  casual   L     2      3       2 1 15 
-1129 sweater Adidas blue   sports   M     2      4       2 2 15 
-1130 sweater Nike   blue   sports   M     2      5       2 2 15 
-1131 shirts  Zara   white  business L     3      1       2 2 15 
-1132 dress   Zara   yellow business M     2      2       2 2 15 
-1133 dress   Zara   white  business M     10     3       2 3 15 
-1134 sweater Adidas red    sports   S     1      4       2 3 15 
-1135 dress   Zara   red    business L     5      5       2 3 15 
-
+id   good    brand  colour model    size  amount price      shopsID month day hour !!!!!!!!!!!!!!!!!!!price
+1111 dress   Zara   red    casual   M     5      5.00        1       1 1 1 
+1112 shirt   Zara   blue   business M     2      20.50       2       1 1 1 
+1113 pants   Zara   green  casual   XL    1      10.10       3       1 1 1 
+1114 pants   Adidas red    sports   L     2      10.00       4       1 1 1
+1115 shirt   Adidas yellow sports   M     4      12.00       5       1 1 1 
+1116 shirt   Zara   white  casual   M     1      30.99       1       1 1 1
+1117 cap     Zara   black  casual   M     1      20.00       1       1 1 1
+1118 shoes   Zara   black  casual   L     2      18.00       1       1 1 1
+1119 dress   Adidas black  casual   S     3      15.20       1       1 1 1
+1110 dress   Zara   white  business M     1      5.20        2       1 1 1
+1121 dress   Zara   black  business M     1      15.20       3       1 1 1
+1123 shoes   Nike   black  sports   M     2      9.20        4       1 1 1
+1124 shoes   Zara   red    casual   M     1      15.20       5       1 1 1
+1125 cap     Zara   red    casual   S     1      10.20       1       1 1 1
+1126 shorts  Zara   red    casual   L     2      15.20       1       1 1 1
+1127 sweater Nike   white  sports   M     2      5.00        2       1 1 1
+1128 tshirt  Zara   white  casual   L     2      10.20       3       1 1 1  //
+1111 dress   Zara   red    casual   M     9      5.00        1       1 1 2 
+1112 shirt   Zara   blue   business M     1      20.50       2       1 1 2 
+1114 pants   Adidas red    sports   L     2      10.00       4       1 1 2 
+1115 shirt   Adidas yellow sports   M     4      12.00       5       1 1 2 
+1118 shoes   Zara   black  casual   L     1      18.00       1       1 1 2 
+1119 dress   Adidas black  casual   S     2      15.20       1       1 1 2  
+1123 shoes   Nike   black  sports   M     2      9.20        4       1 1 2 
+1124 shoes   Zara   red    casual   M     1      15.20       5       1 1 2 
+1125 cap     Zara   red    casual   S     1      10.20       1       1 1 2 
+1126 shorts  Zara   red    casual   L     2      15.20       1       1 1 2 
+1127 sweater Nike   white  sports   M     2      5.00        2       1 1 2
+1128 tshirt  Zara   white  casual   L     2      10.20       3       1 1 2  //
+1129 sweater Adidas blue   sports   M     2      15.20       4       1 2 15 
+1130 sweater Nike   blue   sports   M     2      15.00       5       1 2 15 
+1131 shirts  Zara   white  business L     3      12.00       1       1 2 15 
+1132 dress   Zara   yellow business M     2      15.20       2       1 2 15 
+1133 dress   Zara   white  business M     10     15.20       3       1 3 15 
+1134 sweater Adidas red    sports   S     1      11.20       4       1 3 15 
+1135 dress   Zara   red    business L     5      17.20       5       1 3 15 
