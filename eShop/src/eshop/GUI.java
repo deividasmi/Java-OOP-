@@ -5,6 +5,8 @@
  */
 package eshop;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author WildsG
@@ -29,6 +31,7 @@ public class GUI extends javax.swing.JFrame {
 
         StartDate = new javax.swing.JTextField();
         EndDate = new javax.swing.JTextField();
+        UpdateButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(800, 500));
@@ -36,6 +39,13 @@ public class GUI extends javax.swing.JFrame {
         StartDate.setToolTipText("Enter Start Date in Format MM.DD.HH");
 
         EndDate.setToolTipText("Enter End date in format MM.DD.HH");
+
+        UpdateButton.setText("Update");
+        UpdateButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                UpdateButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -46,15 +56,18 @@ public class GUI extends javax.swing.JFrame {
                 .addComponent(StartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(EndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(448, Short.MAX_VALUE))
+                .addGap(38, 38, 38)
+                .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(310, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(449, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(StartDate, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
-                    .addComponent(EndDate))
+                    .addComponent(StartDate)
+                    .addComponent(EndDate)
+                    .addComponent(UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
                 .addGap(21, 21, 21))
         );
 
@@ -63,6 +76,40 @@ public class GUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
+        TimeManager time = new TimeManager();
+        if(time.checkTimeInput(this.StartDate.getText(),this.EndDate.getText())!=null)
+        {   
+            //variables for Start/End month,day and hour respectively
+            int SM; int SD; int SH;
+            int EM; int ED; int EH;
+            //Setting Start Date values to their variables
+            try{
+            SM = Integer.parseInt(this.StartDate.getText().substring(0,2));
+            SD = Integer.parseInt(this.StartDate.getText().substring(3,5));
+            SH = Integer.parseInt(this.StartDate.getText().substring(6,8));
+            //Setting End Date values to their variables
+            EM = Integer.parseInt(this.EndDate.getText().substring(0,2));
+            ED = Integer.parseInt(this.EndDate.getText().substring(3,5));
+            EH = Integer.parseInt(this.EndDate.getText().substring(6,8));
+            //setting Start timeValue in TimeManager class
+            time.setStartDate(SM,SD,SH);
+            //setting End timeValue in TimeManager class
+            time.setEndDate(EM,ED,EH);
+            time.OutputTime();
+            }
+            catch(Exception e){
+                //alert box if exception is caught
+                 JOptionPane.showMessageDialog(null,"Exception,There were errors in time input.Try again");
+            }
+        }
+        else
+        {   
+            //allert box if user inputs time incorrectly
+            JOptionPane.showMessageDialog(null,"There were errors in time input.Try again");
+        }
+    }//GEN-LAST:event_UpdateButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -98,16 +145,10 @@ public class GUI extends javax.swing.JFrame {
             }
         });
     }
-    public String getStartDate(){
-        String date = this.StartDate.getText();
-        if(date.substring(2,3).equals(".") &&date.substring(4,5).equals("."))
-            return date;
-        else
-            return null;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EndDate;
     private javax.swing.JTextField StartDate;
+    private javax.swing.JButton UpdateButton;
     // End of variables declaration//GEN-END:variables
 }
