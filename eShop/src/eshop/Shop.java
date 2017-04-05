@@ -38,8 +38,8 @@ public class Shop {
         clothes.add(clothe);
     }
     
-    public Clothes getClothes(int i){
-        return clothes.get(i);
+    public ArrayList<Clothes> getClothes(int i){
+        return clothes;
     }
   
     public int getId() {
