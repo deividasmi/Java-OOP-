@@ -10,44 +10,48 @@ package eshop;
  * @author deividas
  */
 
-//id   good    brand  colour model    size  amount shopsID month day hour
+//id   item    brand  colour model    size  amount shopsID month day hour
 
 public class Clothes {
     
     private int id;
-    private String good;
+    private String item;
     private String brand;
     private String colour;
     private String model; //business, casual, sports
     private String size; // format: s,m,l,xl
     private int amount;
+    private double price;
     private int month; //format 1-12
     private int day;    //1-30
     private int hour;   //1-24
 
-    /**
-     * @return the id
-     */
-    
+ 
     public Clothes(){    
     }
     // constructor for clothes object;
-    public Clothes(int id, String good, String brand, String colour, String model, String size, int amount, int month, int day, int hour){
+    public Clothes(int id, String good, String brand, String colour, String model, String size, int amount, double price, int month, int day, int hour){
         this.id = id;
-        this.good = good;
+        this.item = good;
         this.brand = brand;
         this.model = model;
         this.size = size;
         this.amount = amount;
+        this.price = price;
         this.month = month;
         this.day = day;
         this.hour = hour;
     }
+    
+    //overrides toString method so we could decide ourself how data should be printed out
     @Override
     public String toString(){
-        return id + " " + good + " " + brand + " " + model + " " + size + " " + amount + " " + month + " " + day + " " + hour;
+        return id + " " + item + " " + brand + " " + model + " " + size + " " + amount + " " + month + " " + day + " " + hour;
     }
     
+       /**
+     * @return the id
+     */
     public int getId() {
         return id;
     }
@@ -60,17 +64,17 @@ public class Clothes {
     }
 
     /**
-     * @return the good
+     * @return the item
      */
-    public String getGood() {
-        return good;
+    public String getItem() {
+        return item;
     }
 
     /**
-     * @param good the good to set
+     * @param item the item to set
      */
-    public void setGood(String good) {
-        this.good = good;
+    public void setItem(String item) {
+        this.item = item;
     }
 
     /**
@@ -183,6 +187,20 @@ public class Clothes {
      */
     public void setHour(int hour) {
         this.hour = hour;
+    }
+
+    /**
+     * @return the price
+     */
+    public double getPrice() {
+        return price;
+    }
+
+    /**
+     * @param price the price to set
+     */
+    public void setPrice(double price) {
+        this.price = price;
     }
     
 }

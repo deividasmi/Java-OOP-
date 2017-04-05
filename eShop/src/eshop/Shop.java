@@ -17,11 +17,31 @@ public class Shop {
     private String name;
     private String street;
     private String town;
-    private ArrayList<Clothes> clothes;
+    private ArrayList<Clothes> clothes = new ArrayList();
 
-    /**
-     * @return the id
-     */
+  
+    
+    public Shop(){};
+    public Shop(int id, String name, String street, String town){
+        this.id = id;
+        this.name = name;
+        this.street = street;
+        this.town = town;
+    }
+    
+    @Override
+    public String toString(){
+        return id + " " + name + " " + street + " " + town + " ";
+    }
+    
+    public void addClothes(Clothes clothe){
+        clothes.add(clothe);
+    }
+    
+    public ArrayList<Clothes> getClothes(int i){
+        return clothes;
+    }
+  
     public int getId() {
         return id;
     }
@@ -74,6 +94,5 @@ public class Shop {
     public void setTown(String town) {
         this.town = town;
     }
-    
-    
+  
 }
