@@ -6,9 +6,12 @@
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/ClothesData.txt</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/EShop.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Shop.java</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/AccesoriesData</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/LoadData.java</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Search.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Clothes.java</file>
-            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/ShopsData.txt</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/BrandData.txt</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/TimeManager.java</file>
         </group>
     </open-files>
 </project-private>

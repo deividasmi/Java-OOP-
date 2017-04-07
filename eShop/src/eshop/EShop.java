@@ -21,12 +21,17 @@ public class EShop {
         //Creating GUI class and enabling form
         GUI graphicalInterface = new GUI();
         graphicalInterface.setVisible(true);
-        ArrayList<Shop> shops = new ArrayList(); // creating shops arraylist
+        ArrayList<Clothes> clothes = new ArrayList(); // creating clothes arraylist
+        ArrayList<Accessory> accessories = new ArrayList(); // creating accessories arraylist
         LoadData data = new LoadData();
-        data.loadShopData(shops); //currently loads only shops data
-        data.loadClothesData(shops); //loads items into shop class arraylist
-        for(Shop sh:shops){ //testing
-                System.out.println(sh);
+        data.loadAccessoriesData(accessories); // loads dada into arraylists
+        data.loadClothesData(clothes);  // loads clothes data
+        for(Clothes cl:clothes){ //testing
+                System.out.println(cl);
+            }
+        System.out.println("----------------------");
+        for(Accessory ac:accessories){ //testing
+                System.out.println(ac);
             }
     }
     

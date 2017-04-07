@@ -1,6 +1,0 @@
-ID, name,      streets name and number, town
-1   online     Liutauro         11      Vilnius
-2   Molas      Vytauto          21      Kaunas
-3   Akropolis  Laisves          5       Vilnius
-4   Akropolis  Vasaros          5       Alytus
-5   Maxima     Islandijos       12      Klaipeda

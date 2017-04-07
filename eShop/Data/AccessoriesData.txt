@@ -1,0 +1,12 @@
+ID   Item       Brand    Material     Size  Amount Price
+1001 ring       Zara     silver       8     5      200.00
+1002 earing     Zara     gold         7     5      150.50
+1003 earing     Coco     diamond      7     5      100.00
+1004 ring       Zara     silver       7     5      120.99
+1005 ring       Coco     silver       8     5      199.99
+1006 ring       Zara     silver       8     5      50.00
+1007 ring       Zara     gold         9     5      100.00
+1008 ring       Coco     gold         8     5      120.20
+1009 necklace   Zara     diamond      9     5      300.00
+1010 ring       Channel  diamond      9     5      180.20
+1000 ring       Zara     gold         9     5      170.20
