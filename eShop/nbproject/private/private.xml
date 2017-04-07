@@ -3,6 +3,15 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
+            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/LoadData.java</file>
+            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/Shop.java</file>
+            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/EShop.java</file>
+            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/Data/ShopsData.txt</file>
+            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/Clothes.java</file>
+            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/Data/ClothesData.txt</file>
+            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/GUI.java</file>
+=======
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/ClothesData.txt</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/EShop.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Shop.java</file>
@@ -10,8 +19,13 @@
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/LoadData.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Search.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Clothes.java</file>
+<<<<<<< HEAD
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/BrandData.txt</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/TimeManager.java</file>
+=======
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/ShopsData.txt</file>
+>>>>>>> cadf810154e712b17977cffda1d086f3e1821cc0
+>>>>>>> c7c064a108727e670562af03eb3099d6c37cc39f
         </group>
     </open-files>
 </project-private>

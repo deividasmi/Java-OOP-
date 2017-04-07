@@ -32,9 +32,11 @@ public class GUI extends javax.swing.JFrame {
         StartDate = new javax.swing.JTextField();
         EndDate = new javax.swing.JTextField();
         UpdateButton = new javax.swing.JButton();
+        PassTime = new javax.swing.JButton();
+        StartDateLabel = new javax.swing.JLabel();
+        EndDateLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setPreferredSize(new java.awt.Dimension(800, 500));
 
         StartDate.setToolTipText("Enter Start Date in Format MM.DD.HH");
 
@@ -47,38 +49,66 @@ public class GUI extends javax.swing.JFrame {
             }
         });
 
+        PassTime.setText("Pass Time by 1 Hour");
+        PassTime.setActionCommand("PassTime");
+        PassTime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                PassTimeActionPerformed(evt);
+            }
+        });
+
+        StartDateLabel.setText("StartDate");
+
+        EndDateLabel.setText("EndDate");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(80, 80, 80)
-                .addComponent(StartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(EndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(38, 38, 38)
-                .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(310, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(80, 80, 80)
+                        .addComponent(StartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 130, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(38, 38, 38)
+                        .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(34, 34, 34)
+                        .addComponent(PassTime))
+                    .addGroup(layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(StartDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(EndDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(125, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap(449, Short.MAX_VALUE)
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(StartDateLabel)
+                    .addComponent(EndDateLabel))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 420, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(StartDate)
                     .addComponent(EndDate)
-                    .addComponent(UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(PassTime, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(21, 21, 21))
         );
 
-        StartDate.getAccessibleContext().setAccessibleDescription("Enter Start Date in Format MM.DD.HH");
         EndDate.getAccessibleContext().setAccessibleDescription("Enter End Date in Format MM.DD.HH");
+        StartDateLabel.getAccessibleContext().setAccessibleName("StartTimeLabel");
+        EndDateLabel.getAccessibleContext().setAccessibleName("EndDateLabel");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    TimeManager time = new TimeManager();
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
-        TimeManager time = new TimeManager();
+        
         if(time.checkTimeInput(this.StartDate.getText(),this.EndDate.getText())!=null)
         {   
             //variables for Start/End month,day and hour respectively
@@ -97,7 +127,9 @@ public class GUI extends javax.swing.JFrame {
             time.setStartDate(SM,SD,SH);
             //setting End timeValue in TimeManager class
             time.setEndDate(EM,ED,EH);
-            time.OutputTime();
+            //output time
+            StartDateLabel.setText("Start time is "+time.getStartMonth()+":"+ time.getStartDay()+":"+time.getStartHour());
+            EndDateLabel.setText("End time is "+time.getEndMonth()+":"+ time.getEndDay()+":"+time.getEndHour());
             }
             catch(Exception e){
                 //alert box if exception is caught
@@ -111,6 +143,18 @@ public class GUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
+    private void PassTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassTimeActionPerformed
+            time.setStartDate(time.getStartMonth(),time.getStartDay(), time.getStartHour()+1);
+            time.setEndDate(time.getEndMonth(), time.getEndDay(), time.getEndHour()+1);
+            StartDateLabel.setText("Start time is "+time.getStartMonth()+":"+ time.getStartDay()+":"+time.getStartHour());
+            EndDateLabel.setText("End time is "+time.getEndMonth()+":"+ time.getEndDay()+":"+time.getEndHour());
+    }//GEN-LAST:event_PassTimeActionPerformed
+    
+    private void ShowCurrentTime()
+    {
+        StartDateLabel.setText("Start time - "+time.getStartMonth()+":"+ time.getStartHour()+":"+time.getStartDay());
+        EndDateLabel.setText("End time - "+time.getEndMonth()+":"+ time.getEndHour()+":"+time.getEndDay());
+    }
     /**
      * @param args the command line arguments
      */
@@ -148,7 +192,10 @@ public class GUI extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField EndDate;
+    private javax.swing.JLabel EndDateLabel;
+    private javax.swing.JButton PassTime;
     private javax.swing.JTextField StartDate;
+    private javax.swing.JLabel StartDateLabel;
     private javax.swing.JButton UpdateButton;
     // End of variables declaration//GEN-END:variables
 }
