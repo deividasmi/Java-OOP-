@@ -22,8 +22,9 @@ public class EShop {
         GUI graphicalInterface = new GUI();
         graphicalInterface.setVisible(true);
         ArrayList<Shop> shops = new ArrayList(); // creating shops arraylist
-        eshop.LoadData.loadShopData(shops); //currently loads only shops data
-        eshop.LoadData.loadClothesData(shops); //loads items into shop class arraylist
+        LoadData data = new LoadData();
+        data.loadShopData(shops); //currently loads only shops data
+        data.loadClothesData(shops); //loads items into shop class arraylist
         for(Shop sh:shops){ //testing
                 System.out.println(sh);
             }

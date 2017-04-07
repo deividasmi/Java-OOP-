@@ -3,20 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/Shop.java</file>
-            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/EShop.java</file>
-            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/TimeManager.java</file>
-            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/Clothes.java</file>
-            <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/GUI.java</file>
-=======
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/ClothesData.txt</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/EShop.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Shop.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/LoadData.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Clothes.java</file>
             <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/Data/ShopsData.txt</file>
->>>>>>> a0fbcb6a3a9b560aa1403add2e6ae2054d40d6f5
         </group>
     </open-files>
 </project-private>
