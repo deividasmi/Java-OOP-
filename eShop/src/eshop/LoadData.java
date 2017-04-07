@@ -16,14 +16,30 @@ import java.util.Scanner;
  */
 public class LoadData {
     
+    
+    public void loadShopData(ArrayList<Shop> shops) throws FileNotFoundException{
+        File shopFile = new File("./Data/ShopsData.txt");
+        Scanner scan = new Scanner(shopFile); // creates scanner
+        String line = scan.nextLine(); // scans a first comment line in data file
+        while (scan.hasNextLine()){
+            line = scan.nextLine(); // while line exists scans and saves into string
+            String[] array = line.split("\\s+"); //splits string by " " into string array, \\s+ - ignors all spaces in between
+            int id = Integer.parseInt(array[0]); // first element in shop class is shops integer id
+            String street = array[2] + " g. " + array[3]; // formats a street name array[2]-st. name array[3]-st. number
+            Shop shop = new Shop(id,array[1],street,array[4]); // files shop arraylist
+            shops.add(shop); // files array list
+            //System.out.println(shops); // testing
+        }   
+    }
+    
         //id   item    brand  colour model    size  amount shopsID month day hour
-    public static void loadClothesData(ArrayList<Shop> shops) throws FileNotFoundException{
+    public void loadClothesData(ArrayList<Shop> shops) throws FileNotFoundException{
         File clothesFile = new File("./Data/ClothesData.txt");
         Scanner scan = new Scanner(clothesFile);
         String line = scan.nextLine();
         while(scan.hasNextLine()){
             line = scan.nextLine();
-            String[] array = line.split("\\s+");
+            String[] array = line.split("\\s+");  //explained in detail in the previous function
             int id = Integer.parseInt(array[0]);
             int amount = Integer.parseInt(array[6]);
             double price = Double.parseDouble(array[7]);
@@ -44,18 +60,5 @@ public class LoadData {
         }
     }
         //loads data from file using scannner
-    public static void loadShopData(ArrayList<Shop> shops) throws FileNotFoundException{
-        File shopFile = new File("./Data/ShopsData.txt");
-        Scanner scan = new Scanner(shopFile); // creates scanner
-        String line = scan.nextLine(); // scans a first comment line in data file
-        while (scan.hasNextLine()){
-            line = scan.nextLine(); // while line exists scans and saves into string
-            String[] array = line.split("\\s+"); //splits string by " " into string array, \\s+ - ignors all spaces in between
-            int id = Integer.parseInt(array[0]); // first element in shop class is shops integer id
-            String street = array[2] + " g. " + array[3]; // formats a street name array[2]-st. name array[3]-st. number
-            Shop shop = new Shop(id,array[1],street,array[4]); // files shop arraylist
-            shops.add(shop); // files array list
-            //System.out.println(shops); // testing
-        }   
-    }
+    
 }
