@@ -41,6 +41,36 @@ public class TimeManager {
         EndDay = day;
         EndHour = hour;
     }
+    
+    public int getStartMonth()
+    {
+        return StartMonth;
+    }
+    
+    public int getStartDay()
+    {
+        return StartDay;
+    }
+    
+    public int getStartHour()
+    {
+        return StartHour;
+    }
+    
+    public int getEndMonth()
+    {
+        return EndMonth;
+    }
+    
+    public int getEndDay()
+    {
+        return EndDay;
+    }
+    
+    public int getEndHour()
+    {
+        return EndHour;
+    }
     //outputting time for testing purposes
     public void OutputTime()
     {
