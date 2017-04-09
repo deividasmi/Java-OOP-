@@ -23,26 +23,23 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
+          <Group type="102" alignment="0" attributes="0">
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace max="-2" attributes="0"/>
-                      <Component id="StartDateLabel" min="-2" pref="160" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="EndDateLabel" min="-2" pref="160" max="-2" attributes="0"/>
+                  <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="CurrentDateLabel" pref="160" max="32767" attributes="0"/>
+                      <Component id="StartDate" max="32767" attributes="0"/>
                   </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="80" max="-2" attributes="0"/>
-                      <Component id="StartDate" min="-2" pref="130" max="-2" attributes="0"/>
-                      <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="EndDate" min="-2" pref="130" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="38" max="-2" attributes="0"/>
-                      <Component id="UpdateButton" min="-2" pref="100" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
-                      <Component id="PassTime" min="-2" max="-2" attributes="0"/>
-                  </Group>
+                  <Component id="jScrollPane1" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="125" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                  <Component id="UpdateButton" pref="100" max="32767" attributes="0"/>
+                  <Component id="ShowItems" max="32767" attributes="0"/>
+              </Group>
+              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <Component id="PassTime" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="129" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -50,14 +47,20 @@
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="StartDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
-                  <Component id="EndDateLabel" alignment="3" min="-2" max="-2" attributes="0"/>
+              <Component id="CurrentDateLabel" min="-2" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+                      <Component id="jScrollPane1" min="-2" pref="303" max="-2" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
+                      <Component id="ShowItems" min="-2" pref="100" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="420" max="32767" attributes="0"/>
+              <EmptySpace pref="77" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="StartDate" max="32767" attributes="0"/>
-                  <Component id="EndDate" alignment="0" max="32767" attributes="0"/>
                   <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                       <Component id="UpdateButton" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
                       <Component id="PassTime" alignment="3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -71,16 +74,8 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="StartDate">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Enter Start Date in Format MM.DD.HH"/>
+        <Property name="toolTipText" type="java.lang.String" value="Enter Date in Format YY.MM.DD"/>
       </Properties>
-    </Component>
-    <Component class="javax.swing.JTextField" name="EndDate">
-      <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Enter End date in format MM.DD.HH"/>
-      </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleDescription" type="java.lang.String" value="Enter End Date in Format MM.DD.HH"/>
-      </AccessibilityProperties>
     </Component>
     <Component class="javax.swing.JButton" name="UpdateButton">
       <Properties>
@@ -92,28 +87,44 @@
     </Component>
     <Component class="javax.swing.JButton" name="PassTime">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Pass Time by 1 Hour"/>
+        <Property name="text" type="java.lang.String" value="Pass Time by 1 Day"/>
         <Property name="actionCommand" type="java.lang.String" value="PassTime"/>
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="PassTimeActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JLabel" name="StartDateLabel">
+    <Component class="javax.swing.JLabel" name="CurrentDateLabel">
       <Properties>
-        <Property name="text" type="java.lang.String" value="StartDate"/>
+        <Property name="horizontalAlignment" type="int" value="0"/>
+        <Property name="text" type="java.lang.String" value="CurrentDate"/>
       </Properties>
       <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="StartTimeLabel"/>
+        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="label1"/>
       </AccessibilityProperties>
     </Component>
-    <Component class="javax.swing.JLabel" name="EndDateLabel">
+    <Container class="javax.swing.JScrollPane" name="jScrollPane1">
+      <AuxValues>
+        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+      </AuxValues>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+      <SubComponents>
+        <Component class="javax.swing.JTextArea" name="ItemsArea">
+          <Properties>
+            <Property name="columns" type="int" value="20"/>
+            <Property name="rows" type="int" value="5"/>
+          </Properties>
+        </Component>
+      </SubComponents>
+    </Container>
+    <Component class="javax.swing.JButton" name="ShowItems">
       <Properties>
-        <Property name="text" type="java.lang.String" value="EndDate"/>
+        <Property name="text" type="java.lang.String" value="Show Items"/>
       </Properties>
-      <AccessibilityProperties>
-        <Property name="AccessibleContext.accessibleName" type="java.lang.String" value="EndDateLabel"/>
-      </AccessibilityProperties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ShowItemsActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
