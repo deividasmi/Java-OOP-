@@ -1,0 +1,6 @@
+//Brand  update-cycle - how often stocks arrives
+Adidas   7
+Zara     10
+Nike     5
+Channel  15
+Coco     20

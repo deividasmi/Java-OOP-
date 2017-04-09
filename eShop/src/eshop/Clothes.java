@@ -12,25 +12,20 @@ package eshop;
 
 //id   item    brand  colour model    size  amount shopsID month day hour
 
-public class Clothes {
+public class Clothes extends Item{
     
-    private int id;
-    private String item;
-    private String brand;
+    
     private String colour;
-    private String model; //business, casual, sports
     private String size; // format: s,m,l,xl
-    private int amount;
-    private double price;
-    private int month; //format 1-12
-    private int day;    //1-30
-    private int hour;   //1-24
+    private String type; //adult or child
+    private String model; //casual sports business
+
 
  
     public Clothes(){    
     }
     // constructor for clothes object;
-    public Clothes(int id, String good, String brand, String colour, String model, String size, int amount, double price, int month, int day, int hour){
+    public Clothes(int id, String good, String brand, String colour, String model, String size, int amount, double price, String type, int stockUp){
         this.id = id;
         this.item = good;
         this.brand = brand;
@@ -38,59 +33,18 @@ public class Clothes {
         this.size = size;
         this.amount = amount;
         this.price = price;
-        this.month = month;
-        this.day = day;
-        this.hour = hour;
+        this.type = type;
+        this.stockUp = stockUp;
+       
     }
     
     //overrides toString method so we could decide ourself how data should be printed out
     @Override
     public String toString(){
-        return id + " " + item + " " + brand + " " + model + " " + size + " " + amount + " " + month + " " + day + " " + hour;
+        return id + " " + item + " " + brand + " " + model + " " + type + " " + size + " " + amount + " " + price + " " + stockUp;
     }
     
-       /**
-     * @return the id
-     */
-    public int getId() {
-        return id;
-    }
-
-    /**
-     * @param id the id to set
-     */
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    /**
-     * @return the item
-     */
-    public String getItem() {
-        return item;
-    }
-
-    /**
-     * @param item the item to set
-     */
-    public void setItem(String item) {
-        this.item = item;
-    }
-
-    /**
-     * @return the brand
-     */
-    public String getBrand() {
-        return brand;
-    }
-
-    /**
-     * @param brand the brand to set
-     */
-    public void setBrand(String brand) {
-        this.brand = brand;
-    }
-
+    
     /**
      * @return the colour
      */
@@ -105,19 +59,7 @@ public class Clothes {
         this.colour = colour;
     }
 
-    /**
-     * @return the model
-     */
-    public String getModel() {
-        return model;
-    }
 
-    /**
-     * @param model the model to set
-     */
-    public void setModel(String model) {
-        this.model = model;
-    }
 
     /**
      * @return the size
@@ -134,73 +76,25 @@ public class Clothes {
     }
 
     /**
-     * @return the amount
+     * @return the type
      */
-    public int getAmount() {
-        return amount;
+    public String getType() {
+        return type;
     }
 
     /**
-     * @param amount the amount to set
+     * @return the model
      */
-    public void setAmount(int amount) {
-        this.amount = amount;
+    public String getModel() {
+        return model;
     }
 
     /**
-     * @return the month
+     * @param model the model to set
      */
-    public int getMonth() {
-        return month;
+    public void setModel(String model) {
+        this.model = model;
     }
 
-    /**
-     * @param month the month to set
-     */
-    public void setMonth(int month) {
-        this.month = month;
-    }
-
-    /**
-     * @return the day
-     */
-    public int getDay() {
-        return day;
-    }
-
-    /**
-     * @param day the day to set
-     */
-    public void setDay(int day) {
-        this.day = day;
-    }
-
-    /**
-     * @return the hour
-     */
-    public int getHour() {
-        return hour;
-    }
-
-    /**
-     * @param hour the hour to set
-     */
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    /**
-     * @return the price
-     */
-    public double getPrice() {
-        return price;
-    }
-
-    /**
-     * @param price the price to set
-     */
-    public void setPrice(double price) {
-        this.price = price;
-    }
-    
+ 
 }

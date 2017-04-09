@@ -16,26 +16,29 @@ import java.util.Scanner;
  */
 public class LoadData {
     
-    
-    public void loadShopData(ArrayList<Shop> shops) throws FileNotFoundException{
-        File shopFile = new File("./Data/ShopsData.txt");
-        Scanner scan = new Scanner(shopFile); // creates scanner
+    //ID   Item       Brand    Material     Size  Amount Price
+    public void loadAccessoriesData(ArrayList<Accessory> accessories) throws FileNotFoundException{
+        File accessoriesFile = new File("./Data/AccessoriesData.txt");
+        Scanner scan = new Scanner(accessoriesFile); // creates scanner
         String line = scan.nextLine(); // scans a first comment line in data file
         while (scan.hasNextLine()){
             line = scan.nextLine(); // while line exists scans and saves into string
             String[] array = line.split("\\s+"); //splits string by " " into string array, \\s+ - ignors all spaces in between
-            int id = Integer.parseInt(array[0]); // first element in shop class is shops integer id
-            String street = array[2] + " g. " + array[3]; // formats a street name array[2]-st. name array[3]-st. number
-            Shop shop = new Shop(id,array[1],street,array[4]); // files shop arraylist
-            shops.add(shop); // files array list
-            //System.out.println(shops); // testing
+            int id = Integer.parseInt(array[0]);
+            int size = Integer.parseInt(array[4]);
+            int amount = Integer.parseInt(array[5]);
+            double price = Double.parseDouble(array[6]);
+            int stockUp = loadStockUp(array[2]);
+            Accessory accessory = new Accessory(id,array[1],array[2],array[3],size,amount,price,stockUp); // puts data into accessory object
+            accessories.add(accessory); // adds to array list 
+            
         }   
     }
     
-        //id   item    brand  colour model    size  amount shopsID month day hour
-    public void loadClothesData(ArrayList<Shop> shops) throws FileNotFoundException{
+        //id   item    brand  colour model    size  amount  
+    public void loadClothesData(ArrayList<Clothes> clothes) throws FileNotFoundException{
         File clothesFile = new File("./Data/ClothesData.txt");
-        Scanner scan = new Scanner(clothesFile);
+        Scanner scan = new Scanner(clothesFile);  
         String line = scan.nextLine();
         while(scan.hasNextLine()){
             line = scan.nextLine();
@@ -43,22 +46,26 @@ public class LoadData {
             int id = Integer.parseInt(array[0]);
             int amount = Integer.parseInt(array[6]);
             double price = Double.parseDouble(array[7]);
-            int shopsID = Integer.parseInt(array[8]);
-            int month = Integer.parseInt(array[9]);
-            int day = Integer.parseInt(array[10]);
-            int hour = Integer.parseInt(array[11]);
-            Clothes item = new Clothes(id,array[1],array[2],array[3],array[4],array[5],amount,price,month,day,hour);
-            //System.out.println(item);
-            //int i=0;                  //testing purposes
-            for(Shop sh:shops){             //check for each shops element if its id equals items id, if true puts item into arraylist in shop element
-                if(sh.getId() == shopsID){
-                    sh.addClothes(item);
-                   // System.out.println(sh.getClothes(i).getItem());   //testing
-                    //i++;
-                }
-            }
+            int stockUp = loadStockUp(array[2]);
+            Clothes item = new Clothes(id,array[1],array[2],array[3],array[4],array[5],amount,price,array[8],stockUp);
+            clothes.add(item);
         }
     }
-        //loads data from file using scannner
+    //returns the stockUp int number from brand file
+    private int loadStockUp(String brand) throws FileNotFoundException{
+        File brandFile = new File("./Data/BrandData.txt");
+        Scanner scan = new Scanner(brandFile);
+        String line = scan.nextLine();
+        int stockUp = 0;
+        while(scan.hasNextLine()){
+            line = scan.nextLine();     
+            String[] array = line.split("\\s+");
+            stockUp = Integer.parseInt(array[1]); //saves the int 
+            if(array[0].equals(brand)) //if brand is equal to the one given from the clothes or accessories discription when breaks the cycle
+                break;
+        }
+        return stockUp; // returns the save int 
+    }
     
 }
+    
