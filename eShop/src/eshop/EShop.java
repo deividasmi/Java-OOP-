@@ -26,13 +26,16 @@ public class EShop {
         LoadData data = new LoadData();
         data.loadAccessoriesData(accessories); // loads dada into arraylists
         data.loadClothesData(clothes);  // loads clothes data
+        graphicalInterface.setItems(accessories, clothes); // sending both arraylists to GUI class
+        graphicalInterface.initDefaultTime();
         for(Clothes cl:clothes){ //testing
                 System.out.println(cl);
-            }
+        }
         System.out.println("----------------------");
         for(Accessory ac:accessories){ //testing
                 System.out.println(ac);
-            }
+        }
+      
     }
     
     
