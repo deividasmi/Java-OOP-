@@ -139,10 +139,11 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_UpdateButtonActionPerformed
 
     private void PassTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassTimeActionPerformed
-            time.setStartDate(time.getStartYear(),time.getStartMonth(),time.getStartDay()+1);
+            time.addDay();
             CurrentDateLabel.setText("Start time - Year:"+time.getStartYear()+" Month:"+ time.getStartMonth()+" Day:"+time.getStartDay());
     }//GEN-LAST:event_PassTimeActionPerformed
-
+    
+    //outputs all clothes to TextArea
     private void ShowItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowItemsActionPerformed
         for(Clothes cl:clothes)
         {
