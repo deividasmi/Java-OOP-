@@ -19,6 +19,7 @@ public class GUI extends javax.swing.JFrame {
      */
     public GUI() {
         initComponents();
+        initDefaultTime();
     }
 
     //Class variables
@@ -35,11 +36,10 @@ public class GUI extends javax.swing.JFrame {
         CurrentDateLabel = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         ItemsArea = new javax.swing.JTextArea();
-        ShowItems = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        StartDate.setToolTipText("Enter Date in Format YY.MM.DD");
+        StartDate.setToolTipText("Enter Date in Format YYYY.MM.DD");
 
         UpdateButton.setText("Update");
         UpdateButton.addActionListener(new java.awt.event.ActionListener() {
@@ -63,13 +63,6 @@ public class GUI extends javax.swing.JFrame {
         ItemsArea.setRows(5);
         jScrollPane1.setViewportView(ItemsArea);
 
-        ShowItems.setText("Show Items");
-        ShowItems.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ShowItemsActionPerformed(evt);
-            }
-        });
-
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -82,9 +75,7 @@ public class GUI extends javax.swing.JFrame {
                         .addComponent(StartDate))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(54, 54, 54)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(UpdateButton, javax.swing.GroupLayout.DEFAULT_SIZE, 100, Short.MAX_VALUE)
-                    .addComponent(ShowItems, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(34, 34, 34)
                 .addComponent(PassTime)
                 .addContainerGap(129, Short.MAX_VALUE))
@@ -94,13 +85,8 @@ public class GUI extends javax.swing.JFrame {
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(CurrentDateLabel)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(40, 40, 40)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(153, 153, 153)
-                        .addComponent(ShowItems, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(40, 40, 40)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 303, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 77, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(StartDate)
@@ -115,7 +101,6 @@ public class GUI extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     TimeManager time = new TimeManager();
-    
     private void UpdateButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UpdateButtonActionPerformed
         
           
@@ -123,9 +108,9 @@ public class GUI extends javax.swing.JFrame {
             int SY; int SM; int SD;
             //Setting Start Date values to their variables
             try{
-            SY = Integer.parseInt(this.StartDate.getText().substring(0,2));
-            SM = Integer.parseInt(this.StartDate.getText().substring(3,5));
-            SD = Integer.parseInt(this.StartDate.getText().substring(6,8));
+            SY = Integer.parseInt(this.StartDate.getText().substring(0,4));
+            SM = Integer.parseInt(this.StartDate.getText().substring(5,7));
+            SD = Integer.parseInt(this.StartDate.getText().substring(8,10));
             
             //setting Start timeValue in TimeManager class
             time.setStartDate(SY,SM,SD);
@@ -143,23 +128,28 @@ public class GUI extends javax.swing.JFrame {
             CurrentDateLabel.setText("Start time - Year:"+time.getStartYear()+" Month:"+ time.getStartMonth()+" Day:"+time.getStartDay());
     }//GEN-LAST:event_PassTimeActionPerformed
     
-    //outputs all clothes to TextArea
-    private void ShowItemsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ShowItemsActionPerformed
-        for(Clothes cl:clothes)
-        {
-            ItemsArea.append(cl.toString()+"\n");
-        }
-    }//GEN-LAST:event_ShowItemsActionPerformed
-    //this is done at start
+   //this is done at start
     public void setItems(ArrayList<Accessory> accessory,ArrayList<Clothes> clothes)
     {
         this.accessories = accessory;
         this.clothes = clothes;
+        
     }
     //this is done at start
-    public void initDefaultTime()
+    private void initDefaultTime()
     {
         CurrentDateLabel.setText("Start time - Year:"+time.getStartYear()+" Month:"+ time.getStartMonth()+" Day:"+time.getStartDay());
+    }
+    public void UpdateItemList()
+    {
+        for(Clothes cl:clothes)
+        {
+            ItemsArea.append(cl.toString()+"\n");
+        }
+        ItemsArea.append("---------------------------- \n");
+        for(Accessory ac:accessories){
+            ItemsArea.append(ac.toString()+"\n");
+        }
     }
     /**
      * @param args the command line arguments
@@ -203,7 +193,6 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JLabel CurrentDateLabel;
     private javax.swing.JTextArea ItemsArea;
     private javax.swing.JButton PassTime;
-    private javax.swing.JButton ShowItems;
     private javax.swing.JTextField StartDate;
     private javax.swing.JButton UpdateButton;
     private javax.swing.JScrollPane jScrollPane1;
