@@ -33,10 +33,7 @@
                   <Component id="jScrollPane1" alignment="0" min="-2" pref="284" max="-2" attributes="0"/>
               </Group>
               <EmptySpace min="-2" pref="54" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                  <Component id="UpdateButton" pref="100" max="32767" attributes="0"/>
-                  <Component id="ShowItems" max="32767" attributes="0"/>
-              </Group>
+              <Component id="UpdateButton" min="-2" pref="100" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
               <Component id="PassTime" min="-2" max="-2" attributes="0"/>
               <EmptySpace pref="129" max="32767" attributes="0"/>
@@ -48,16 +45,8 @@
           <Group type="102" alignment="1" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
               <Component id="CurrentDateLabel" min="-2" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
-                      <Component id="jScrollPane1" min="-2" pref="303" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="153" max="-2" attributes="0"/>
-                      <Component id="ShowItems" min="-2" pref="100" max="-2" attributes="0"/>
-                  </Group>
-              </Group>
+              <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
+              <Component id="jScrollPane1" min="-2" pref="303" max="-2" attributes="0"/>
               <EmptySpace pref="77" max="32767" attributes="0"/>
               <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="StartDate" max="32767" attributes="0"/>
@@ -74,7 +63,7 @@
   <SubComponents>
     <Component class="javax.swing.JTextField" name="StartDate">
       <Properties>
-        <Property name="toolTipText" type="java.lang.String" value="Enter Date in Format YY.MM.DD"/>
+        <Property name="toolTipText" type="java.lang.String" value="Enter Date in Format YYYY.MM.DD"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JButton" name="UpdateButton">
@@ -118,13 +107,5 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="ShowItems">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Show Items"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="ShowItemsActionPerformed"/>
-      </Events>
-    </Component>
   </SubComponents>
 </Form>

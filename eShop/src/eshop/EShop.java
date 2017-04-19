@@ -27,7 +27,7 @@ public class EShop {
         data.loadAccessoriesData(accessories); // loads dada into arraylists
         data.loadClothesData(clothes);  // loads clothes data
         graphicalInterface.setItems(accessories, clothes); // sending both arraylists to GUI class
-        graphicalInterface.initDefaultTime();
+        graphicalInterface.UpdateItemList();
         for(Clothes cl:clothes){ //testing
                 System.out.println(cl);
         }
