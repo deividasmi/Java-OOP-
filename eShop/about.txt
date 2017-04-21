@@ -1,0 +1,10 @@
+﻿Developers : Artūras Dulka and Deividas Miliauskas
+--------- 5.E-Shop of clothes and Accessories ----------
+
+The program should simulate events of an e-shop. When program is ran, default time is set. Time can be changed by fixed amount(1 Day)
+by pressing a button. Screen displays a list of items available in the shop. By choosing item's ID user can select and buy it. If the item is not in the shop,
+User is notified when the item will arrive. User is also suggested another similar item. User can sort items by price or other field. Eshop's merchandise amount
+is updated according to brand's delivery update-cycle(They deliver goods after certain amount of days all the time). Program also notifies what brand will soon 
+deliver their goods(When there is one day left till delivery). User has a cart, where he can puts his items, after putting some items into the cart he can checkcout.
+
+

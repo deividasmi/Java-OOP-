@@ -28,11 +28,14 @@ public class EShop {
         data.loadClothesData(clothes);  // loads clothes data
         graphicalInterface.setItems(accessories, clothes); // sending both arraylists to GUI class
         graphicalInterface.UpdateItemList();
-        for(Clothes cl:clothes){ //testing
+        Search search = new Search();
+        ArrayList<Clothes> clothesSuggestions = search.clothesSuggestions(clothes, clothes.get(17));
+        for(Clothes cl:clothesSuggestions){ //testing
                 System.out.println(cl);
         }
         System.out.println("----------------------");
-        for(Accessory ac:accessories){ //testing
+        ArrayList<Accessory> accessoriesSuggestions = search.accessoriesSuggestions(accessories, accessories.get(9));
+        for(Accessory ac:accessoriesSuggestions){ //testing
                 System.out.println(ac);
         }
       
