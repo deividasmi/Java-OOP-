@@ -7,6 +7,7 @@ package eshop;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,9 +17,16 @@ import java.util.Scanner;
  */
 public class LoadData {
     
+    
+    private final File accessoriesFile = new File("./Data/AccessoriesData.txt");
+    private final File clothesFile = new File("./Data/ClothesData.txt");
+    private final File historyFile = new File("./Data/History.txt");
+
+    
+    
     //ID   Item       Brand    Material     Size  Amount Price
     public void loadAccessoriesData(ArrayList<Accessory> accessories) throws FileNotFoundException{
-        File accessoriesFile = new File("./Data/AccessoriesData.txt");
+        
         Scanner scan = new Scanner(accessoriesFile); // creates scanner
         String line = scan.nextLine(); // scans a first comment line in data file
         while (scan.hasNextLine()){
@@ -37,7 +45,6 @@ public class LoadData {
     
         //id   item    brand  colour model    size  amount  
     public void loadClothesData(ArrayList<Clothes> clothes) throws FileNotFoundException{
-        File clothesFile = new File("./Data/ClothesData.txt");
         Scanner scan = new Scanner(clothesFile);  
         String line = scan.nextLine();
         while(scan.hasNextLine()){
@@ -66,6 +73,12 @@ public class LoadData {
         }
         return stockUp; // returns the save int 
     }
+    
+    public void loadHistoryToFile(ArrayList<Object> object) throws FileNotFoundException{
+        PrintWriter writer = new PrintWriter(historyFile);
+        writer.append(object.toString());
+    }
+    
     
 }
     
