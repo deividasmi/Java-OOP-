@@ -10,8 +10,6 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -79,14 +77,20 @@ public class LoadData {
     }
     
     public void loadHistoryToFile(ArrayList<Object> object) throws FileNotFoundException, IOException{
-        BufferedWriter writer = new BufferedWriter(new FileWriter(historyFile,true));
+        BufferedWriter writer = new BufferedWriter(new FileWriter(historyFile,true)); //creates writer that can write to file // true - enables appending
         for(Object o:object){
-            writer.append(o.toString());
-            writer.newLine();
+            writer.append(o.toString()); //writtes to file
+            writer.newLine();   // starts new line
         }
-        writer.close();
+        writer.close(); 
     }
     
+    //clears history by creating writer without enabled appending
+    public void clearHistory() throws IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter(historyFile));
+        writer.newLine(); //writes empty line
+        writer.close();
+    }
     
 }
     

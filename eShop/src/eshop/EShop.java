@@ -43,7 +43,7 @@ public class EShop {
                 
         }
         data.loadHistoryToFile(object);
-      
+        data.clearHistory();
     }
     
     
