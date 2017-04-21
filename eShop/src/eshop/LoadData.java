@@ -5,8 +5,13 @@
  */
 package eshop;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,9 +21,16 @@ import java.util.Scanner;
  */
 public class LoadData {
     
+    
+    private final File accessoriesFile = new File("./Data/AccessoriesData.txt");
+    private final File clothesFile = new File("./Data/ClothesData.txt");
+    private final File historyFile = new File("./Data/History.txt");
+
+    
+    
     //ID   Item       Brand    Material     Size  Amount Price
     public void loadAccessoriesData(ArrayList<Accessory> accessories) throws FileNotFoundException{
-        File accessoriesFile = new File("./Data/AccessoriesData.txt");
+        
         Scanner scan = new Scanner(accessoriesFile); // creates scanner
         String line = scan.nextLine(); // scans a first comment line in data file
         while (scan.hasNextLine()){
@@ -37,7 +49,6 @@ public class LoadData {
     
         //id   item    brand  colour model    size  amount  
     public void loadClothesData(ArrayList<Clothes> clothes) throws FileNotFoundException{
-        File clothesFile = new File("./Data/ClothesData.txt");
         Scanner scan = new Scanner(clothesFile);  
         String line = scan.nextLine();
         while(scan.hasNextLine()){
@@ -66,6 +77,16 @@ public class LoadData {
         }
         return stockUp; // returns the save int 
     }
+    
+    public void loadHistoryToFile(ArrayList<Object> object) throws FileNotFoundException, IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter(historyFile,true));
+        for(Object o:object){
+            writer.append(o.toString());
+            writer.newLine();
+        }
+        writer.close();
+    }
+    
     
 }
     

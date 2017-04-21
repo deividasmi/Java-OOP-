@@ -7,6 +7,7 @@ package eshop;
 
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 /**
  *
@@ -17,7 +18,7 @@ public class EShop {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws FileNotFoundException, IOException {
         //Creating GUI class and enabling form
         GUI graphicalInterface = new GUI();
         graphicalInterface.setVisible(true);
@@ -34,9 +35,13 @@ public class EShop {
         }
         System.out.println("----------------------");
         ArrayList<Accessory> accessoriesSuggestions = search.accessoriesSuggestions(accessories, accessories.get(9));
+        ArrayList<Object> object = new ArrayList();
         for(Accessory ac:accessoriesSuggestions){ //testing
                 System.out.println(ac);
+                object.add(ac);
+                
         }
+        data.loadHistoryToFile(object);
       
     }
     
