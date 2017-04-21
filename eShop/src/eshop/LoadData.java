@@ -5,9 +5,13 @@
  */
 package eshop;
 
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.io.PrintWriter;
+import java.io.Writer;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -74,9 +78,13 @@ public class LoadData {
         return stockUp; // returns the save int 
     }
     
-    public void loadHistoryToFile(ArrayList<Object> object) throws FileNotFoundException{
-        PrintWriter writer = new PrintWriter(historyFile);
-        writer.append(object.toString());
+    public void loadHistoryToFile(ArrayList<Object> object) throws FileNotFoundException, IOException{
+        BufferedWriter writer = new BufferedWriter(new FileWriter(historyFile,true));
+        for(Object o:object){
+            writer.append(o.toString());
+            writer.newLine();
+        }
+        writer.close();
     }
     
     
