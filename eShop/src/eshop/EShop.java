@@ -28,7 +28,6 @@ public class EShop {
         data.loadAccessoriesData(accessories); // loads dada into arraylists
         data.loadClothesData(clothes);  // loads clothes data
         graphicalInterface.setItems(accessories, clothes); // sending both arraylists to GUI class
-        graphicalInterface.UpdateItemList();
         Search search = new Search();
         ArrayList<Clothes> clothesSuggestions = search.clothesSuggestions(clothes, clothes.get(17));
         for(Clothes cl:clothesSuggestions){ //testing

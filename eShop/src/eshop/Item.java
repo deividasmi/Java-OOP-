@@ -17,7 +17,7 @@ public class Item {
    protected int amount;
    protected double price;
    protected int stockUp;  // how many days passed till new goods are delivered
-  
+   protected int cartAmount;
 
     /**
      * @return the id
