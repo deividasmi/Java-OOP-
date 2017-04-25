@@ -36,12 +36,21 @@ public class EShop {
         System.out.println("----------------------");
         ArrayList<Accessory> accessoriesSuggestions = search.accessoriesSuggestions(accessories, accessories.get(9));
         ArrayList<Object> object = new ArrayList();
-        for(Accessory ac:accessoriesSuggestions){ //testing
+        Sort sortTest = new Sort();
+        
+        //quicke sort with comparatos testing
+        sortTest.quickSort(clothes, new PriceComparator());
+        for(Clothes cl:clothes)
+            System.out.println(cl);
+        
+        
+        //memory loading to history file testing 
+        /*for(Accessory ac:accessoriesSuggestions){ //testing
                 System.out.println(ac);
                 object.add(ac);
                 
-        }
-        data.loadHistoryToFile(object);//appends to history.txt
+        }*/
+        //data.loadHistoryToFile(object);//appends to history.txt
         //data.clearHistory(); //clears history
     }
     
