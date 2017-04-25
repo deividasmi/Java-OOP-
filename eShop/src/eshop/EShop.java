@@ -42,8 +42,8 @@ public class EShop {
                 object.add(ac);
                 
         }
-        data.loadHistoryToFile(object);
-        data.clearHistory();
+        data.loadHistoryToFile(object);//appends to history.txt
+        //data.clearHistory(); //clears history
     }
     
     
