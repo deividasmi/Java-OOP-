@@ -6,10 +6,12 @@
 package eshop;
 
 import java.awt.Font;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import javax.swing.DefaultListModel;
 import javax.swing.JList;
 import javax.swing.JOptionPane;
+
 
 /**
  *
@@ -36,7 +38,8 @@ public class GUI extends javax.swing.JFrame {
     //variable for transfering items to cart and vice versa
     Object selectedItem;
     Object selectedCartItem;
-    ArrayList<Object> cartObjects = new ArrayList();
+    ArrayList<Accessory> cartAccessories = new ArrayList();
+    ArrayList<Clothes> cartClothes = new ArrayList();
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -223,9 +226,50 @@ public class GUI extends javax.swing.JFrame {
     
     private void AddToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddToCartButtonActionPerformed
         try{
-        cartModel.addElement(selectedItem.toString());
-        CartList.setModel(cartModel);
-        cartObjects.add(selectedItem);
+            boolean elementAdded = false;
+            if(selectedItem.getClass().getName().equals("eshop.Clothes"))
+            {
+                Clothes selected = (Clothes) selectedItem;
+                for(Clothes obj:cartClothes)
+                {   
+                    if(obj.getId() == selected.getId())
+                    {
+                        elementAdded = true;
+                        selected.addCartAmount();
+
+                    }
+                   
+                }
+                if(!elementAdded)
+                {
+                    cartClothes.add(selected);
+                }
+               
+            }
+            elementAdded = false;
+            if(selectedItem.getClass().getName().equals("eshop.Accessory"))
+            {   
+                
+                Accessory selected = (Accessory) selectedItem;
+                for(Accessory obj:cartAccessories)
+                {   
+                    if(obj.getId() == selected.getId())
+                    {   
+                       
+                        elementAdded = true;
+                        selected.addCartAmount();
+
+                    }
+                   
+                }
+                if(!elementAdded)
+                {   
+                    cartAccessories.add(selected);
+                }
+               
+            }
+           
+        UpdateCart();     
         }
         catch(Exception e)
         {
@@ -243,11 +287,31 @@ public class GUI extends javax.swing.JFrame {
         selectedItem = ItemsList.getSelectedValue();
         
     }//GEN-LAST:event_ItemsListMouseClicked
-
+    private void UpdateCart()
+    {
+         cartModel.clear();   
+         for(Clothes obj : cartClothes)
+         {
+            cartModel.addElement(obj.toCartString()); 
+         }
+         for(Accessory obj : cartAccessories)
+         {
+            cartModel.addElement(obj.toCartString()); 
+         }
+         CartList.setModel(cartModel);
+    }
     private void RemoveFromCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveFromCartButtonActionPerformed
-        cartModel.removeElement(selectedCartItem);
-        CartList.setModel(cartModel);
-        cartObjects.remove(selectedCartItem);
+      try{
+          Item test = (Item)selectedCartItem;
+          System.out.println(test.getCartAmount());
+          
+          UpdateCart();
+      }
+      catch(Exception e)
+      {
+          JOptionPane.showMessageDialog(null,"Item was not selected");
+      }
+       
     }//GEN-LAST:event_RemoveFromCartButtonActionPerformed
 
     private void ItemTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ItemTypeActionPerformed

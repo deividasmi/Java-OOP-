@@ -19,6 +19,11 @@ public class Accessory extends Item {
         return String.format("%5s %10s %10s %10s %4d %4d   %.2f", id,item,brand,material,size,amount,price);
 
     }
+    public String toCartString()
+    {
+        return String.format("%5s %10s %10s %10s %4d %4d  %.2f", id,item,brand,material,size,cartAmount,price);
+    }
+    
     
     public Accessory(){}
     

@@ -17,7 +17,7 @@ public class Item {
    protected int amount;
    protected double price;
    protected int stockUp;  // how many days passed till new goods are delivered
-   protected int cartAmount;
+   protected int cartAmount = 1;
 
     /**
      * @return the id
@@ -101,6 +101,18 @@ public class Item {
      */
     public void setStockUp(int stockUp) {
         this.stockUp = stockUp;
+    }
+    public void addCartAmount()
+    {
+        cartAmount++;
+    }
+    public int getCartAmount()
+    {
+        return cartAmount;
+    }
+    public void setCartAmount(int amount)
+    {
+        cartAmount = amount;
     }
 
     
