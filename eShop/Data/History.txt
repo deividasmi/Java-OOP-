@@ -1,5 +1,11 @@
+
  1007       ring       Zara       gold    9    5   100.00
  1010       ring    Channel    diamond    9    5   180.20
+ 1000       ring       Zara       gold    9    5   170.20
+ 1007       ring       Zara       gold    9    5   100.00
+ 1000       ring       Zara       gold    9    5   170.20
+ 1010       ring    Channel    diamond    9    5   180.20
+<<<<<<< HEAD
  1000       ring       Zara       gold    9    5   170.20
  1007       ring       Zara       gold    9    5   100.00
  1010       ring    Channel    diamond    9    5   180.20
@@ -7,18 +13,6 @@
  1007       ring       Zara       gold    9    5   100.00
  1010       ring    Channel    diamond    9    5   180.20
  1000       ring       Zara       gold    9    5   170.20
- 1007       ring       Zara       gold    9    5   100.00
- 1010       ring    Channel    diamond    9    5   180.20
- 1000       ring       Zara       gold    9    5   170.20
- 1007       ring       Zara       gold    9    5   100.00
- 1010       ring    Channel    diamond    9    5   180.20
- 1000       ring       Zara       gold    9    5   170.20
- 1007       ring       Zara       gold    9    5   100.00
- 1010       ring    Channel    diamond    9    5   180.20
- 1000       ring       Zara       gold    9    5   170.20
- 1007       ring       Zara       gold    9    5   100.00
- 1010       ring    Channel    diamond    9    5   180.20
- 1000       ring       Zara       gold    9    5   170.20
  1007       ring       Zara       gold    9    5   100,00
  1010       ring    Channel    diamond    9    5   180,20
  1000       ring       Zara       gold    9    5   170,20
@@ -337,3 +331,5 @@
  1007       ring       Zara       gold    9    5   100,00
  1010       ring    Channel    diamond    9    5   180,20
  1000       ring       Zara       gold    9    5   170,20
+=======
+>>>>>>> 5d7b82e1a4672e515f6d1c3946eeabdc05dd5d5b

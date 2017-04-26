@@ -11,14 +11,28 @@ package eshop;
  */
 public class Item {
     
-   protected int id;
-   protected String item;
-   protected String brand;
-   protected int amount;
-   protected double price;
-   protected int stockUp;  // how many days passed till new goods are delivered
-   protected int cartAmount = 1;
 
+    protected int id;
+    protected String item;
+    protected String brand;
+    protected int amount;
+    protected double price;
+    protected int stockUp;  // how many days passed till new goods are delivered
+    protected int cartAmount = 0;
+
+
+    //takes amounnt from stock and puts it in carts
+    public void putToCart(){
+        if(stockUp!=0){
+            stockUp--;
+            cartAmount++;
+        }
+    }
+    // reset carts amount;
+    public void clearCartAmount(){
+        cartAmount = 0;
+    }
+    
     /**
      * @return the id
      */
