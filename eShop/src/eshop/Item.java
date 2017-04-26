@@ -21,8 +21,8 @@ public class Item {
 
     //takes amounnt from stock and puts it in carts
     public void putToCart(){
-        if(stockUp!=0){
-            stockUp--;
+        if(amount!=0){
+            amount--;
             cartAmount++;
         }
     }

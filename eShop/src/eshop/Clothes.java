@@ -42,7 +42,7 @@ public class Clothes extends Item{
     @Override
     public String toString(){
         //return id + " " + item + " " + brand + " " + model + " " + type + " " + size + " " + amount + " " + price + " " + stockUp;
-        return String.format("%5s %10s %10s %10s %10s %4s %4d   %.2f", id,item,brand,model,type,size,amount,price);
+        return String.format("%10s %10s %10s %10s %4s %4d   %.2f",item,brand,model,type,size,amount,price);
     }
     
     

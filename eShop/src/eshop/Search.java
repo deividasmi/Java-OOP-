@@ -34,6 +34,10 @@ public class Search {
         return newClothes;
     }
 
+    public void searchStocks(){}
     
+    public double checkDiscount(){
+        return 0;
+    }
     
 }
