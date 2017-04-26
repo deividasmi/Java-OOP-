@@ -11,6 +11,7 @@ package eshop;
  */
 public class Item {
     
+
     protected int id;
     protected String item;
     protected String brand;
@@ -18,6 +19,7 @@ public class Item {
     protected double price;
     protected int stockUp;  // how many days passed till new goods are delivered
     protected int cartAmount = 0;
+
 
     //takes amounnt from stock and puts it in carts
     public void putToCart(){
@@ -114,19 +116,17 @@ public class Item {
     public void setStockUp(int stockUp) {
         this.stockUp = stockUp;
     }
-
-    /**
-     * @return the cartAmount
-     */
-    public int getCartAmount() {
+    public void addCartAmount()
+    {
+        cartAmount++;
+    }
+    public int getCartAmount()
+    {
         return cartAmount;
     }
-
-    /**
-     * @param cartAmount the cartAmount to set
-     */
-    public void setCartAmount(int cartAmount) {
-        this.cartAmount = cartAmount;
+    public void setCartAmount(int amount)
+    {
+        cartAmount = amount;
     }
 
     
