@@ -5,6 +5,8 @@
  */
 package eshop;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author WildsG
@@ -17,6 +19,9 @@ public class TimeManager {
     public int StartYear = 2017;
     public int StartMonth = 4;
     public int StartDay = 15;
+    
+    private int totalDays = 0;
+    
     //setting start date
     public void setStartDate(int year, int month, int day){
         StartYear = year;
@@ -37,9 +42,53 @@ public class TimeManager {
     {
         return StartDay;
     }
+
+    //updates stocks for all the items
+    public void updateStocks(ArrayList<Clothes> clothes, ArrayList<Accessory> accessories){
+        for(Clothes cl:clothes)
+            addStocks(cl);
+        for(Accessory ac:accessories)
+            addStocks(ac);
+    }
+    //adds to stocks if it is a stock up day    
+    public void addStocks(Item item){
+        if(totalDays > item.getStockUp() && totalDays % item.getStockUp() == 0){
+            int newAmount;
+            newAmount = item.getAmount() + 10;
+            item.setAmount(newAmount);
+        }
+    }
+    //checks if the its 3 days from stock up
+    public boolean checkIfDiscount(Item item){
+        boolean discountDay = false;
+        if(daysTillStockUp(item) == 3)
+            discountDay = true;
+        return discountDay;
+    }
+    //checks if there are no item in the stocks and returns the how many days left till the next stockup;
+    public int daysTillStockUp(Item item){
+        int leftDays = 0;
+        if(item.getAmount() != 0){
+            if(totalDays < item.getStockUp()){
+                leftDays = item.getStockUp() - totalDays;
+            }else 
+                leftDays = item.getStockUp() - (totalDays % item.getStockUp());
+        }
+        return leftDays;
+    }
+    
+    //returns new price with a discount if it is a discount day
+    public double discountedPrice(Item item){
+        double newPrice = 0;
+        if(checkIfDiscount(item))
+            newPrice = item.getPrice() / 2;
+        return newPrice;
+    }
+    
     //Adds one day to date, also checks if how many days months have for more precise time update.
     public void addDay()
     {
+        totalDays++;
         StartDay++;
         switch (StartMonth) {
             case 1:
