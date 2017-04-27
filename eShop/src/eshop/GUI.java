@@ -38,8 +38,8 @@ public class GUI extends javax.swing.JFrame {
     //variable for transfering items to cart and vice versa
     Object selectedItem;
     Object selectedCartItem;
-    ArrayList<Accessory> cartAccessories = new ArrayList();
-    ArrayList<Clothes> cartClothes = new ArrayList();
+    double price;
+    ArrayList<Item> cartItems = new ArrayList();
     
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -57,6 +57,7 @@ public class GUI extends javax.swing.JFrame {
         RemoveFromCartButton = new javax.swing.JButton();
         ItemType = new javax.swing.JComboBox<>();
         ProceedButton = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(1024, 764));
@@ -131,6 +132,13 @@ public class GUI extends javax.swing.JFrame {
         });
 
         ProceedButton.setText("Proceed");
+        ProceedButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                ProceedButtonActionPerformed(evt);
+            }
+        });
+
+        jLabel1.setText("jLabel1");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -141,7 +149,7 @@ public class GUI extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(ItemType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap())
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(CurrentDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -152,39 +160,40 @@ public class GUI extends javax.swing.JFrame {
                                 .addGap(40, 40, 40)
                                 .addComponent(PassTime))
                             .addComponent(jScrollPane2))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                        .addComponent(AddToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(RemoveFromCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(45, 45, 45))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(ProceedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(150, 150, 150))))))
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 326, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(layout.createSequentialGroup()
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(AddToCartButton, javax.swing.GroupLayout.DEFAULT_SIZE, 123, Short.MAX_VALUE))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(RemoveFromCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(ProceedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(46, 46, 46))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(CurrentDateLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(ItemType, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(26, 26, 26)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 545, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 180, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(29, 29, 29)
+                        .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 27, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(29, 29, 29)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(RemoveFromCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(AddToCartButton, javax.swing.GroupLayout.PREFERRED_SIZE, 36, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(48, 48, 48)
-                        .addComponent(ProceedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(53, 53, 53)
+                        .addGap(45, 45, 45)
+                        .addComponent(ProceedButton, javax.swing.GroupLayout.PREFERRED_SIZE, 42, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 53, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(StartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(UpdateButton, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,7 +220,7 @@ public class GUI extends javax.swing.JFrame {
             //setting Start timeValue in TimeManager class
             time.setStartDate(SY,SM,SD);
             //output time
-            CurrentDateLabel.setText("Start time - Year:"+time.getStartYear()+" Month:"+ time.getStartMonth()+" Day:"+time.getStartDay());
+            CurrentDateLabel.setText(time.toString());
             }
             catch(Exception e){
                 //alert box if exception is caught
@@ -222,55 +231,32 @@ public class GUI extends javax.swing.JFrame {
     private void PassTimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PassTimeActionPerformed
             time.addDay();
             time.updateStocks(clothes, accessories);    
-            CurrentDateLabel.setText("Start time - Year:"+time.getStartYear()+" Month:"+ time.getStartMonth()+" Day:"+time.getStartDay());
+            CurrentDateLabel.setText(time.toString());
     }//GEN-LAST:event_PassTimeActionPerformed
     
     private void AddToCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AddToCartButtonActionPerformed
-        try{
+  try{
             boolean elementAdded = false;
-            if(selectedItem.getClass().getName().equals("eshop.Clothes"))
-            {
-                Clothes selected = (Clothes) selectedItem;
-                for(Clothes obj:cartClothes)
+          
+                Item selected = (Item) selectedItem;
+                for(Item obj:cartItems)
                 {   
                     if(obj.getId() == selected.getId())
                     {
                         elementAdded = true;
-                        selected.addCartAmount();
-
                     }
-                   
                 }
                 if(!elementAdded)
                 {
-                    cartClothes.add(selected);
+                    cartItems.add(selected);
                 }
-               
-            }
-            elementAdded = false;
-            if(selectedItem.getClass().getName().equals("eshop.Accessory"))
-            {   
+                if(selected.amount>0)
+                {
+                    selected.putToCart();
+                    price+=selected.getPrice();
+                }
                 
-                Accessory selected = (Accessory) selectedItem;
-                for(Accessory obj:cartAccessories)
-                {   
-                    if(obj.getId() == selected.getId())
-                    {   
-                       
-                        elementAdded = true;
-                        selected.addCartAmount();
-
-                    }
-                   
-                }
-                if(!elementAdded)
-                {   
-                    cartAccessories.add(selected);
-                }
-               
-            }
-           
-        UpdateCart();     
+                UpdateCart();     
         }
         catch(Exception e)
         {
@@ -290,28 +276,24 @@ public class GUI extends javax.swing.JFrame {
     }//GEN-LAST:event_ItemsListMouseClicked
     private void UpdateCart()
     {
-         cartModel.clear();   
-         for(Clothes obj : cartClothes)
-         {
-            cartModel.addElement(obj.toCartString()); 
-         }
-         for(Accessory obj : cartAccessories)
+        cartModel.clear();
+         //PriceAmountLabel.setText(String.format("%.2f",price)+"€");
+         for(Item obj : cartItems)
          {
             cartModel.addElement(obj.toCartString()); 
          }
          CartList.setModel(cartModel);
     }
     private void RemoveFromCartButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RemoveFromCartButtonActionPerformed
-      try{
-          Item test = (Item)selectedCartItem;
-          System.out.println(test.getCartAmount());
-          
+     Item selected = (Item)selectedCartItem;
+          if(selected.getCartAmount()>0)
+              selected.removeItemFromCart();
+          else
+          {
+              cartItems.remove(selectedItem);
+              cartModel.removeElement(selectedItem);    
+          }
           UpdateCart();
-      }
-      catch(Exception e)
-      {
-          JOptionPane.showMessageDialog(null,"Item was not selected");
-      }
        
     }//GEN-LAST:event_RemoveFromCartButtonActionPerformed
 
@@ -322,6 +304,19 @@ public class GUI extends javax.swing.JFrame {
                UpdateItemList(accessories);
         
     }//GEN-LAST:event_ItemTypeActionPerformed
+
+    private void ProceedButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ProceedButtonActionPerformed
+        /* try {
+            putToHistory.loadHistoryToFile(cartItems,time,price);
+            cartItems.clear();
+            cartModel.clear();
+            price = 0;
+            PriceAmountLabel.setText(String.format("%.2f",price)+"€");
+            System.out.println("History was Updated successfully");
+        } catch (IOException ex) {
+            Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+    }//GEN-LAST:event_ProceedButtonActionPerformed
     
    //this is done at start
     public void setItems(ArrayList<Accessory> accessory,ArrayList<Clothes> clothes)
@@ -334,7 +329,7 @@ public class GUI extends javax.swing.JFrame {
     //this is done at start
     private void initDefaultTime()
     {
-        CurrentDateLabel.setText("Start time - Year:"+time.getStartYear()+" Month:"+ time.getStartMonth()+" Day:"+time.getStartDay());
+        CurrentDateLabel.setText(time.toString());
        
     }
     private void UpdateItemList(ArrayList<?> object)
@@ -396,6 +391,7 @@ public class GUI extends javax.swing.JFrame {
     private javax.swing.JButton RemoveFromCartButton;
     private javax.swing.JTextField StartDate;
     private javax.swing.JButton UpdateButton;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
     // End of variables declaration//GEN-END:variables
