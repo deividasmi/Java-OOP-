@@ -18,6 +18,12 @@ public class TimeManager {
     public int StartMonth = 4;
     public int StartDay = 15;
     //setting start date
+    @Override
+    public String toString()
+    {
+        return "Date: "+StartYear+"/"+StartMonth+"/"+StartDay;
+    }
+    
     public void setStartDate(int year, int month, int day){
         StartYear = year;
         StartMonth = month;

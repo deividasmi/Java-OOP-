@@ -19,14 +19,20 @@ public class Item {
     protected double price;
     protected int stockUp;  // how many days passed till new goods are delivered
     protected int cartAmount = 0;
-
-
+    
+    public String toCartString()
+    {
+        return String.format("%10s %10s %.2f %4d", item,brand,price,cartAmount);
+    }
+    
     //takes amounnt from stock and puts it in carts
     public void putToCart(){
-        if(stockUp!=0){
-            stockUp--;
-            cartAmount++;
-        }
+        amount--;
+        cartAmount++;
+    }
+    public void removeItemFromCart()
+    {
+            cartAmount--;
     }
     // reset carts amount;
     public void clearCartAmount(){

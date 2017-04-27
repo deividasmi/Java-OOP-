@@ -76,10 +76,14 @@ public class LoadData {
         return stockUp; // returns the save int 
     }
     
-    public void loadHistoryToFile(ArrayList<Object> object) throws FileNotFoundException, IOException{
+    public void loadHistoryToFile(ArrayList<Item> object,TimeManager time,double fullPrice) throws FileNotFoundException, IOException{
         BufferedWriter writer = new BufferedWriter(new FileWriter(historyFile,true)); //creates writer that can write to file // true - enables appending
-        for(Object o:object){
-            writer.append(o.toString()); //writtes to file
+        writer.append(time.toString());
+        writer.newLine();
+        writer.append("Price:"+String.format("%.2f",fullPrice)+"€");
+        writer.newLine();
+        for(Item o:object){
+            writer.append(o.toCartString()); //writtes to file
             writer.newLine();   // starts new line
         }
         writer.close(); 
