@@ -29,12 +29,12 @@ public class EShop {
         data.loadClothesData(clothes);  // loads clothes data
         graphicalInterface.setItems(accessories, clothes); // sending both arraylists to GUI class
         Search search = new Search();
-        ArrayList<Clothes> clothesSuggestions = search.clothesSuggestions(clothes, clothes.get(17));
+        ArrayList<Clothes> clothesSuggestions = search.suggestions(clothes, clothes.get(17));
         for(Clothes cl:clothesSuggestions){ //testing
                 System.out.println(cl);
         }
         System.out.println("----------------------");
-        ArrayList<Accessory> accessoriesSuggestions = search.accessoriesSuggestions(accessories, accessories.get(9));
+        ArrayList<Accessory> accessoriesSuggestions = search.suggestions(accessories, accessories.get(9));
         ArrayList<Object> object = new ArrayList();
         Sort sortTest = new Sort();
         

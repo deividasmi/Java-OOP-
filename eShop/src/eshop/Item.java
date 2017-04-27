@@ -32,7 +32,7 @@ public class Item {
     }
     public void removeItemFromCart()
     {
-            cartAmount--;
+        cartAmount--;
     
     }
     // reset carts amount;

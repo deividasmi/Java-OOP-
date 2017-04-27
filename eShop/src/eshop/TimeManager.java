@@ -16,9 +16,9 @@ import java.util.ArrayList;
 public class TimeManager {
    //public class variables
     //setting default date
-    public int StartYear = 2017;
-    public int StartMonth = 4;
-    public int StartDay = 15;
+    private int StartYear = 2017;
+    private int StartMonth = 4;
+    private int StartDay = 15;
     
     private int totalDays = 0;
     
