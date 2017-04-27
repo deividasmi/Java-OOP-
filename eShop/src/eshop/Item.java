@@ -33,6 +33,7 @@ public class Item {
     public void removeItemFromCart()
     {
             cartAmount--;
+    
     }
     // reset carts amount;
     public void clearCartAmount(){

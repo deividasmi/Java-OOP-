@@ -33,7 +33,5 @@ public class Search {
             }
         return newClothes;
     }
-
-    
-    
+   
 }
