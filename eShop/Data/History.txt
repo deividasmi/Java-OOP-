@@ -15,3 +15,16 @@ Price:62,00€
     shirts       Zara   business      adult    L    1   12,00
 Date: 2017/4/15
 Price:0,00€
+Date: 2017/4/15
+Price:76,10€
+     shoes       Zara     casual      adult    M    1   15,20
+    tshirt       Zara     casual      child    L    2   10,20
+     pants       Zara     casual      child   XL    1   10,10
+   sweater     Adidas     sports      adult    M    2   15,20
+Date: 2017/4/15
+Price:40,40€
+   sweater       Nike     sports      child    M    2   5,00
+     dress       Zara   business      adult    M    2   15,20
+Date: 2017/4/15
+Price:12,00€
+     shirt     Adidas     sports      child    M    1   12,00
