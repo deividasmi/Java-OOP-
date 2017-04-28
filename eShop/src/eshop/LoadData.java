@@ -23,6 +23,8 @@ public class LoadData {
     private final File accessoriesFile = new File("./Data/AccessoriesData.txt");
     private final File clothesFile = new File("./Data/ClothesData.txt");
     private final File historyFile = new File("./Data/History.txt");
+    private final File brandFile = new File("./Data/BrandData.txt");
+
 
     
     
@@ -62,7 +64,6 @@ public class LoadData {
     }
     //returns the stockUp int number from brand file
     private int loadStockUp(String brand) throws FileNotFoundException{
-        File brandFile = new File("./Data/BrandData.txt");
         Scanner scan = new Scanner(brandFile);
         String line = scan.nextLine();
         int stockUp = 0;
@@ -74,6 +75,17 @@ public class LoadData {
                 break;
         }
         return stockUp; // returns the save int 
+    }
+    
+    public ArrayList<String> loadHistory() throws FileNotFoundException{
+        Scanner scan = new Scanner(historyFile);
+        String line;
+        ArrayList<String> history = new ArrayList();
+        while(scan.hasNextLine()){
+            line = scan.nextLine();
+            history.add(line);
+        }
+        return history;
     }
     
     public void loadHistoryToFile(ArrayList<Item> object,TimeManager time,double fullPrice) throws FileNotFoundException, IOException{
@@ -95,6 +107,8 @@ public class LoadData {
         writer.newLine(); //writes empty line
         writer.close();
     }
+    
+    
     
 }
     

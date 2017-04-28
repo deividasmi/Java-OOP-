@@ -67,7 +67,7 @@ public class TimeManager {
     //checks if the its 3 days from stock up
     public boolean checkIfDiscount(Item item){
         boolean discountDay = false;
-        if(daysTillStockUp(item) == 3)
+        if(daysTillStockUp(item) <= 3)
             discountDay = true;
         return discountDay;
     }
