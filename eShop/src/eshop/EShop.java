@@ -39,10 +39,10 @@ public class EShop {
         Sort sortTest = new Sort();
         
         //quicke sort with comparatos testing
-        sortTest.quickSort(accessories, new AccessorySizeComparator());
-        for(Accessory cl:accessories)
+        sortTest.quickSort(clothes, new ClothesSizeComparator());
+        for(Clothes cl:clothes)
             System.out.println(cl);
-        
+       
         
         //memory loading to history file testing 
         /*for(Accessory ac:accessoriesSuggestions){ //testing

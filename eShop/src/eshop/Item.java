@@ -17,7 +17,7 @@ public class Item {
     protected String brand;
     protected int amount;
     protected double price;
-    protected int stockUp;  // how many days passed till new goods are delivered
+    protected int stockUp;  
     protected int cartAmount = 0;
     
     public String toCartString()
@@ -25,7 +25,7 @@ public class Item {
         return String.format("%10s %10s %.2f %4d", item,brand,price,cartAmount);
     }
     
-    //takes amounnt from stock and puts it in carts
+    
     public void putToCart(){
         amount--;
         cartAmount++;
@@ -35,7 +35,7 @@ public class Item {
         cartAmount--;
     
     }
-    // reset carts amount;
+    
     public void clearCartAmount(){
         cartAmount = 0;
     }

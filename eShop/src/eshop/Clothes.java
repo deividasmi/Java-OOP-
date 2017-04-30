@@ -10,21 +10,21 @@ package eshop;
  * @author deividas
  */
 
-//id   item    brand  colour model    size  amount shopsID month day hour
+
 
 public class Clothes extends Item{
     
     
     private String colour;
-    private String size; // format: s,m,l,xl
-    private String type; //adult or child
-    private String model; //casual sports business
+    private String size; 
+    private String type; 
+    private String model; 
 
 
  
     public Clothes(){    
     }
-    // constructor for clothes object;
+    
     public Clothes(int id, String good, String brand, String colour, String model, String size, int amount, double price, String type, int stockUp){
         this.id = id;
         this.item = good;
@@ -38,10 +38,10 @@ public class Clothes extends Item{
        
     }
     
-    //overrides toString method so we could decide ourself how data should be printed out
+   
     @Override
     public String toString(){
-        //return id + " " + item + " " + brand + " " + model + " " + type + " " + size + " " + amount + " " + price + " " + stockUp;
+        
         return String.format("%10s %10s %10s %10s %4s %.2f",item,brand,model,type,size,price);
     }
 
