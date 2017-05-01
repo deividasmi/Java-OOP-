@@ -14,19 +14,19 @@ import java.util.Comparator;
  */
 public class Sort {
     
-    public void quickSort(ArrayList arr, Comparator comparator) {
+    public void quickSort(ArrayList arr, Comparator comparator,boolean reverse) {
       
                 if (arr.isEmpty()){
                         return;
                 }
-                sort(arr, 0, arr.size() - 1, comparator);
+                sort(arr, 0, arr.size() - 1, comparator,reverse);
         }
 
-        private void sort(ArrayList arr, int low, int high, Comparator comparator) {
+        private void sort(ArrayList arr, int low, int high, Comparator comparator,boolean reverse) {
                 int i = low, j = high;
 
                 Object pivot = arr.get(low + (high-low)/2);
-           
+                if(!reverse){
                 while (i <= j) {
                         while (comparator.compare(arr.get(i), pivot)<0) {
                                 i++;
@@ -40,10 +40,27 @@ public class Sort {
                                 j--;
                         }
                 }
+                }
+                else if(reverse)
+                {
+                 while (i <= j) {
+                        while (comparator.compare(arr.get(i), pivot)>0) {
+                                i++;
+                        }
+                        while (comparator.compare(arr.get(j), pivot)<0) {
+                                j--;
+                        }
+                        if (i <= j) {
+                                swap(arr,i, j);
+                                i++;
+                                j--;
+                        }
+                }
+                }
                 if (low < j)
-                        sort(arr, low, j,comparator);
+                        sort(arr, low, j,comparator,reverse);
                 if (i < high)
-                        sort(arr, i, high,comparator);
+                        sort(arr, i, high,comparator,reverse);
         }
 
         private void swap(ArrayList arr, int i, int j) {

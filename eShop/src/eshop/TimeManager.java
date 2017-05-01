@@ -58,7 +58,7 @@ public class TimeManager {
     }
     //adds to stocks if it is a stock up day    
     public void addStocks(Item item){
-        if(totalDays > item.getStockUp() && totalDays % item.getStockUp() == 0){
+        if(totalDays >= item.getStockUp() && totalDays % item.getStockUp() == 0){
             int newAmount;
             newAmount = item.getAmount() + 10;
             item.setAmount(newAmount);
@@ -74,20 +74,19 @@ public class TimeManager {
     //checks if there are no item in the stocks and returns the how many days left till the next stockup;
     public int daysTillStockUp(Item item){
         int leftDays = 0;
-        if(item.getAmount() != 0){
-            if(totalDays < item.getStockUp()){
-                leftDays = item.getStockUp() - totalDays;
-            }else 
-                leftDays = item.getStockUp() - (totalDays % item.getStockUp());
-        }
+        if(totalDays < item.getStockUp())
+            leftDays = item.getStockUp() - totalDays;
+        else 
+            leftDays = item.getStockUp() - (totalDays % item.getStockUp());
+        
+     
         return leftDays;
     }
     
     //returns new price with a discount if it is a discount day
     public double discountedPrice(Item item){
         double newPrice = 0;
-        if(checkIfDiscount(item))
-            newPrice = item.getPrice() / 2;
+        newPrice = item.getPrice() / 2;
         return newPrice;
     }
     

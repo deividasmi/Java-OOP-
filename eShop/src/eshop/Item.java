@@ -19,12 +19,21 @@ public class Item {
     protected double price;
     protected int stockUp;  // how many days passed till new goods are delivered
     protected int cartAmount = 0;
+    protected boolean discounted = false;
     
     public String toCartString()
     {
         return String.format("%10s %10s %.2f %4d", item,brand,price,cartAmount);
     }
     
+    public void setDiscounted(boolean discounted)
+    {
+        this.discounted = discounted;
+    }
+    public boolean isDiscounted()
+    {
+        return discounted;
+    }
     //takes amounnt from stock and puts it in carts
     public void putToCart(){
         amount--;
@@ -39,6 +48,7 @@ public class Item {
     public void clearCartAmount(){
         cartAmount = 0;
     }
+    
     
     /**
      * @return the id
