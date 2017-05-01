@@ -13,18 +13,22 @@ import java.util.ArrayList;
  */
 public class Search {
     
-    //returns suggestion array for accessories / suggestions are made by comparing size, return arraylist of accessories of needed size
+    /**
+    * Searches for suggestion of similar items for provided one in the stocks and returns them as an ArrayList
+    * @param accessories ArrayList of all accessories in the shop
+    * @param modelAccessory accessory for which suggestions are looked for
+    * @return ArrayList of type Accessory of suggestions for a client of a similar item
+    */
     public ArrayList<Accessory> suggestions(ArrayList<Accessory> accessories, Accessory modelAccessory){
         ArrayList<Accessory> newAccessories = new ArrayList();
         for(Accessory ac:accessories){
-            if(modelAccessory.getItem().equals(ac.getItem()) && ac.getSize() == modelAccessory.getSize() && ac.getAmount() != 0) //checks if sizes are equal and if item is not sold out
+            if(modelAccessory.getItem().equals(ac.getItem()) && ac.getSize() == modelAccessory.getSize() && ac.getAmount() != 0) 
                 newAccessories.add(ac);
         }
         return newAccessories;
     }
     
-    //return suggestion array for clothes / suggestion array is made by comparing clothes by their model, size and type.
-    //@modelClothes - is clothes object for witch suggestions are search for;
+
     public ArrayList<Clothes> suggestions(ArrayList<Clothes> clothes, Clothes modelClothes){
         ArrayList<Clothes> newClothes = new ArrayList();
         for(Clothes cl:clothes){

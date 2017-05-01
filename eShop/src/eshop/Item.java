@@ -17,7 +17,7 @@ public class Item {
     protected String brand;
     protected int amount;
     protected double price;
-    protected int stockUp;  // how many days passed till new goods are delivered
+    protected int stockUp;  
     protected int cartAmount = 0;
     protected boolean discounted = false;
     
@@ -35,6 +35,7 @@ public class Item {
         return discounted;
     }
     //takes amounnt from stock and puts it in carts
+
     public void putToCart(){
         amount--;
         cartAmount++;
@@ -44,7 +45,7 @@ public class Item {
         cartAmount--;
     
     }
-    // reset carts amount;
+    
     public void clearCartAmount(){
         cartAmount = 0;
     }

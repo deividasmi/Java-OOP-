@@ -14,15 +14,14 @@ import java.util.ArrayList;
 
 
 public class TimeManager {
-   //public class variables
-    //setting default date
+   
     private int StartYear = 2017;
     private int StartMonth = 4;
     private int StartDay = 15;
     
     private int totalDays = 0;
     
-    //setting start date
+    
     @Override
     public String toString()
     {
@@ -49,14 +48,14 @@ public class TimeManager {
         return StartDay;
     }
 
-    //updates stocks for all the items
+    
     public void updateStocks(ArrayList<Clothes> clothes, ArrayList<Accessory> accessories){
         for(Clothes cl:clothes)
             addStocks(cl);
         for(Accessory ac:accessories)
             addStocks(ac);
     }
-    //adds to stocks if it is a stock up day    
+       
     public void addStocks(Item item){
         if(totalDays >= item.getStockUp() && totalDays % item.getStockUp() == 0){
             int newAmount;
@@ -64,14 +63,23 @@ public class TimeManager {
             item.setAmount(newAmount);
         }
     }
-    //checks if the its 3 days from stock up
+    /**
+     * Checks if it is three days or less till the next stock up
+     * @param item item in question
+     * @return boolean value true - if it is 3 or less days left
+     */
     public boolean checkIfDiscount(Item item){
         boolean discountDay = false;
         if(daysTillStockUp(item) <= 3)
             discountDay = true;
         return discountDay;
     }
-    //checks if there are no item in the stocks and returns the how many days left till the next stockup;
+    
+    /**
+     * Counts how many days left till the new batch of goods are brought to the shop
+     * @param item item for which it looks for days left till the next stock up
+     * @return integer value of days left till the next batch of the item
+     */
     public int daysTillStockUp(Item item){
         int leftDays = 0;
         if(totalDays < item.getStockUp())
@@ -83,14 +91,16 @@ public class TimeManager {
         return leftDays;
     }
     
-    //returns new price with a discount if it is a discount day
+
     public double discountedPrice(Item item){
         double newPrice = 0;
         newPrice = item.getPrice() / 2;
         return newPrice;
     }
     
-    //Adds one day to date, also checks if how many days months have for more precise time update.
+    /**
+     * 
+     */
     public void addDay()
     {
         totalDays++;

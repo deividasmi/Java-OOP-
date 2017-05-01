@@ -3,6 +3,7 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+<<<<<<< HEAD
             <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/Item.java</file>
             <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/NameComparator.java</file>
             <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/ClothesSizeComparator.java</file>
@@ -17,6 +18,15 @@
             <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/Sort.java</file>
             <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/Clothes.java</file>
             <file>file:/C:/Users/WildsG/Desktop/eShop/eshop/eShop/src/eshop/SuggestionsFrame.java</file>
+=======
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/GUI.java</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/EShop.java</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/LoadData.java</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/ClothesSizeComparator.java</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Search.java</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/TimeManager.java</file>
+            <file>file:/home/deividas/Documents/Java/eShop/eshop/eShop/src/eshop/Sort.java</file>
+>>>>>>> 2390e7ac40445c22c1e3e8583b8cdf7aa83f7066
         </group>
     </open-files>
 </project-private>
