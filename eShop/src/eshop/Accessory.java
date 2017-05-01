@@ -16,12 +16,12 @@ public class Accessory extends Item {
     
     @Override
     public String toString(){
-        return String.format("%10s %10s %10s %4d %.2f", item,brand,material,size,price);
+        return String.format("%4d %10s %10s %10s %4d %.2f",id,item,brand,material,size,price);
 
     }
     public String toCartString()
     {
-        return String.format("%10s %10s %10s %4d %4d   %.2f", item,brand,material,size,cartAmount,price);
+        return String.format("%4d %10s %10s %10s %4d %4d %.2f",id,item,brand,material,size,cartAmount,price);
     }
     public Accessory(){}
     
@@ -36,6 +36,7 @@ public class Accessory extends Item {
         this.stockUp = stockUp;
     }
     
+ 
     /**
      * @return the Size
      */
