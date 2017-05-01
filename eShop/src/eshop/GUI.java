@@ -445,7 +445,8 @@ public class GUI extends javax.swing.JFrame {
             price = 0;
             Price.setText(String.format("%.2f",price)+"€");
             System.out.println("History was Updated successfully");
-            ProceedButton.setEnabled(false);
+            checkForCartItemsAmount();
+             JOptionPane.showMessageDialog(null, "Thank You for buying, come again!");
         } catch (IOException ex) {
             Logger.getLogger(GUI.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -612,12 +613,6 @@ public class GUI extends javax.swing.JFrame {
         data.loadAccessoriesData(accessories); // loads dada into arraylists
         data.loadClothesData(clothes);  // loads clothes data
         graphicalInterface.setItems(accessories, clothes); // sending both arraylists to GUI class
-        Search search = new Search();
-        ArrayList<Clothes> clothesSuggestions = search.suggestions(clothes, clothes.get(17));
-        ArrayList<Accessory> accessoriesSuggestions = search.suggestions(accessories, accessories.get(9));
-        ArrayList<Object> object = new ArrayList();
-        Sort sortTest = new Sort();
-        
         
     }
 
